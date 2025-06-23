@@ -55,7 +55,7 @@ With the cleaned dataset, I wrote SQL queries to explore:
 |------|-------------|
 | `layoffs_raw.csv` | Original uncleaned dataset |
 | `layoffs_cleaning.sql` | Full SQL script with all cleaning steps |
-| `cleaned_layoffs.csv` *(optional)* | Final cleaned dataset |
+| 
 | `eda_queries.sql` | SQL queries used for data exploration |
 | `cleaning_notes.md` | Step-by-step notes explaining the cleaning process |
 | `insights_summary.md` | Short summary of insights and observations from EDA |
