@@ -1,42 +1,44 @@
-# Tech Layoffs Data Analysis — Product Insights Case Study
+# Tech Layoffs SQL Cleaning Project (MySQL)
 
-## 1. Objective & Questions
-- What trends can we surface about layoffs across time, industry, and region?
-- Can we derive actionable insights for stakeholders (e.g., companies, policymakers)?
+## Project Overview
+This project demonstrates **SQL data cleaning and exploration** on a global tech layoffs dataset, based on **Alex The Analyst’s SQL tutorial**.  
 
-## 2. Metrics Defined
-| Metric | Description |
-|--------|-------------|
-| Quarterly Layoff Count | Total layoffs per quarter |
-| Industry Layoff Rate | Layoffs relative to total workforce (if available) |
-| Regional Layoff Share | Percentage share of layoffs by region |
+The focus is on:  
+- Inspecting and understanding raw datasets  
+- Cleaning inconsistent or missing data  
+- Deduplicating records  
+- Converting text/percentage columns to numeric  
+- Preparing a clean dataset ready for analysis or visualization  
 
-## 3. Data Pipeline
-- `layoffs_raw.csv` → cleaned via `layoffs_cleaning.sql`  
-- Cleaning steps: dedupe, trim, standardize, null handling  
-- Final dataset stored as `layoffs_clean.csv`
+---
 
-## 4. Analytical Methods
-- Time-series trends (monthly/quarterly)  
-- Top industries, companies, and regions  
-- Cohort & segment comparisons (simulated A/B contrasts)
+## Project Structure
+```text
+layoffs-mysql-cleaning-project/
+├─ sql_scripts/
+│   ├─ 01_clean_staging.sql       # Initial cleaning
+│   ├─ 02_numeric_columns.sql     # Converting percentages/text to numeric
+│   ├─ 03_deduplication.sql       # Removing duplicates
+│   └─ 04_final_clean_table.sql   # Final clean table
+├─ data/
+│   ├─ raw_layoffs.csv            # Original dataset
+│   └─ clean_layoffs.csv          # Cleaned dataset ready for analysis
+├─ README.md
 
-## 5. Visual Dashboards
+## Data Cleaning Steps
+- Trim and standardize text fields
+- Normalize missing or blank values
+- Convert percentage columns to numeric
+- Fill missing industries based on company + location
+- Remove rows with no layoff information
+- Deduplicate records across key columns
+- Create a final clean table
 
-  - **Trend over Time** chart  
-  - **Industry Comparison** bar chart  
-  - **Regional Heatmap**
+---
 
-## 6. Insights & Recommendations
-- Layoffs peaked in …  
-- Industries most affected …  
-- Suggested tactical responses …
-
-## 7. Context & Limitations
-- Data may lack …  
-- External factors not captured …
-
-## 8. Next Steps
-- Incorporate workforce size for rate calculations  
-- Add qualitative data (e.g., media sentiment analysis)  
-- Build predictive modeling with economic indicators
+## Exploratory Analysis
+- Row counts at each stage: raw → staging → clean
+- Spot-check first rows to ensure data quality
+- Optional aggregates:
+  - Total layoffs by month
+  - Top companies by layoffs
